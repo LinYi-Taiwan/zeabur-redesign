@@ -1,0 +1,35 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 info pnpm": {
+    "err": {
+      "name": "Error",
+      "message": "Command failed with ENOENT: storybook\nspawn storybook ENOENT",
+      "code": "ENOENT",
+      "stack": "Error: Command failed with ENOENT: storybook\nspawn storybook ENOENT\n    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n    at onErrorNT (node:internal/child_process:483:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)"
+    }
+  },
+  "2 error pnpm": {
+    "errno": -2,
+    "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+    "syscall": "spawn storybook",
+    "path": "storybook",
+    "spawnargs": [],
+    "originalMessage": "spawn storybook ENOENT",
+    "shortMessage": "Command failed with ENOENT: storybook\nspawn storybook ENOENT",
+    "command": "storybook",
+    "escapedCommand": "storybook",
+    "failed": true,
+    "timedOut": false,
+    "isCanceled": false,
+    "killed": false,
+    "prefix": "/Users/linyi",
+    "err": {
+      "name": "Error",
+      "message": "Command failed with ENOENT: storybook\nspawn storybook ENOENT",
+      "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+      "stack": "Error: Command failed with ENOENT: storybook\nspawn storybook ENOENT\n    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n    at onErrorNT (node:internal/child_process:483:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)"
+    }
+  }
+}
