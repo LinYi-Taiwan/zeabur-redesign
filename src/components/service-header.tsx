@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 import { serviceData } from "@/lib/mock-data";
 
 const tabs = [
-  { name: "服務狀態", href: "/dashboard" },
-  { name: "資源用量", href: "/dashboard/resources" },
+  { name: "服務狀態", href: "/" },
+  { name: "資源用量", href: "/resources" },
 ];
 
 export function ServiceHeader() {
@@ -47,8 +47,8 @@ export function ServiceHeader() {
       <div className="flex gap-0 px-2xl mt-lg">
         {tabs.map((tab) => {
           const isActive =
-            tab.href === "/dashboard"
-              ? pathname === "/dashboard"
+            tab.href === "/"
+              ? pathname === "/"
               : pathname.startsWith(tab.href);
 
           return (

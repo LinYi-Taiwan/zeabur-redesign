@@ -1,4 +1,11 @@
-import { Cpu, MemoryStick, DollarSign, Activity, Lightbulb, TriangleAlert } from "lucide-react";
+import {
+  Cpu,
+  MemoryStick,
+  DollarSign,
+  Activity,
+  Lightbulb,
+  TriangleAlert,
+} from "lucide-react";
 import { resourceData } from "@/lib/mock-data";
 
 /** Mini sparkline chart rendered as SVG */
@@ -22,11 +29,17 @@ export function MiniAreaChart({
     y: height - ((v - min) / range) * height * 0.9 - height * 0.05,
   }));
 
-  const linePath = points.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ");
+  const linePath = points
+    .map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`)
+    .join(" ");
   const areaPath = `${linePath} L ${width} ${height} L 0 ${height} Z`;
 
   return (
-    <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-12" preserveAspectRatio="none">
+    <svg
+      viewBox={`0 0 ${width} ${height}`}
+      className="w-full h-12"
+      preserveAspectRatio="none"
+    >
       <defs>
         <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor={color} stopOpacity={0.25} />
@@ -57,17 +70,27 @@ export interface AlertTipProps {
   text: string;
 }
 
-function AlertTip({ icon: Icon, iconColor, bgColor, borderColor, text }: AlertTipProps) {
+function AlertTip({
+  icon: Icon,
+  iconColor,
+  bgColor,
+  borderColor,
+  text,
+}: AlertTipProps) {
   return (
     <div
       className="flex gap-sm rounded-sm px-md py-sm"
       style={{
         backgroundColor: bgColor,
-        borderLeft: `2px solid ${borderColor}`,
       }}
     >
-      <Icon className="w-3.5 h-3.5 shrink-0 mt-0.5" style={{ color: iconColor }} />
-      <p className="text-label-sm leading-[1.4] text-on-surface-variant">{text}</p>
+      <Icon
+        className="w-3.5 h-3.5 shrink-0 mt-0.5"
+        style={{ color: iconColor }}
+      />
+      <p className="text-label-sm leading-[1.4] text-on-surface-variant">
+        {text}
+      </p>
     </div>
   );
 }
@@ -109,17 +132,27 @@ export function MetricCard({
         >
           <Icon className="w-[18px] h-[18px]" style={{ color: iconColor }} />
         </div>
-        <span className="text-headline-sm font-semibold font-mono text-on-surface">{value}</span>
+        <span className="text-headline-sm font-semibold font-mono text-on-surface">
+          {value}
+        </span>
       </div>
 
       {/* Label */}
       <div>
-        <div className="text-body-md font-semibold text-on-surface">{label}</div>
-        <div className={`text-label-sm font-mono ${sublabelColor}`}>{sublabel}</div>
+        <div className="text-body-md font-semibold text-on-surface">
+          {label}
+        </div>
+        <div className={`text-label-sm font-mono ${sublabelColor}`}>
+          {sublabel}
+        </div>
       </div>
 
       {/* Mini chart */}
-      <MiniAreaChart color={chartColor} gradientId={chartGradientId} data={chartData} />
+      <MiniAreaChart
+        color={chartColor}
+        gradientId={chartGradientId}
+        data={chartData}
+      />
       <TimeLabels />
 
       {/* Alert tip */}
@@ -133,14 +166,21 @@ export function ResourceSummary() {
 
   const cpuData = resourceData.timeSeries["12h"].map((d) => d.cpu);
   const memData = resourceData.timeSeries["12h"].map((d) => d.memory);
-  const costData = cpuData.map((_, i) => 0.8 + (i / cpuData.length) * 0.6 + Math.sin(i * 0.7) * 0.05);
+  const costData = cpuData.map(
+    (_, i) => 0.8 + (i / cpuData.length) * 0.6 + Math.sin(i * 0.7) * 0.05,
+  );
   const netData = cpuData.map(
     (_, i) =>
       0.3 +
-      Math.exp(-((i - cpuData.length * 0.6) ** 2) / (2 * (cpuData.length * 0.15) ** 2)) * 0.9
+      Math.exp(
+        -((i - cpuData.length * 0.6) ** 2) / (2 * (cpuData.length * 0.15) ** 2),
+      ) *
+        0.9,
   );
 
-  const costChange = Math.round(((cost.estimated - cost.previousMonth) / cost.previousMonth) * 100);
+  const costChange = Math.round(
+    ((cost.estimated - cost.previousMonth) / cost.previousMonth) * 100,
+  );
 
   return (
     <div className="flex flex-col gap-md">
