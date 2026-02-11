@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { StatusOverview } from "@/components/organisms/status-overview/status-overview";
 import { DeploymentList } from "@/components/organisms/deployment-list/deployment-list";
 import { DomainCard } from "@/components/molecules/domain-card/domain-card";
 import { QuickActions } from "@/components/molecules/quick-actions/quick-actions";
@@ -12,12 +11,9 @@ export function ServiceStatusPage() {
   }, []);
 
   return (
-    <div className="space-y-6">
-      {/* Status Overview */}
-      <StatusOverview />
-
+    <div className="space-y-xl">
       {/* Main content grid */}
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-3 gap-xl">
         {/* Deployment list — 2/3 */}
         <div className="col-span-2">
           <DeploymentList />

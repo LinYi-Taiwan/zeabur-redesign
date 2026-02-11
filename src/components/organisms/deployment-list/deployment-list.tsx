@@ -70,7 +70,7 @@ export function DeploymentList() {
         <div className="flex items-center gap-2">
           <button
             onClick={handleRedeploy}
-            className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg text-sm font-medium transition-colors"
+            className="flex items-center gap-1.5 px-lg h-8 bg-primary hover:bg-primary/90 text-on-primary rounded-full text-label-md font-medium transition-colors"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             Redeploy

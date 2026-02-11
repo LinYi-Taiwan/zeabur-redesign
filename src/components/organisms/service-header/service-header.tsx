@@ -3,6 +3,12 @@ import { Globe, Settings, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { serviceData } from "@/lib/mock-data";
 
+const statusConfig = {
+  success: { label: "Running", dotClass: "bg-status-success", textClass: "text-status-success", bgClass: "bg-status-success/12" },
+  error: { label: "Error", dotClass: "bg-status-error", textClass: "text-status-error", bgClass: "bg-status-error/12" },
+  pending: { label: "Pending", dotClass: "bg-status-pending", textClass: "text-status-pending", bgClass: "bg-status-pending/12" },
+};
+
 const tabs = [
   { name: "服務狀態", href: "/" },
   { name: "資源用量", href: "/resources" },
@@ -10,6 +16,7 @@ const tabs = [
 
 export function ServiceHeader() {
   const { pathname } = useLocation();
+  const config = statusConfig[serviceData.status] ?? statusConfig.success;
 
   return (
     <header className="border-b border-outline-variant bg-surface">
@@ -24,6 +31,10 @@ export function ServiceHeader() {
               <h1 className="text-title-lg font-semibold text-on-surface">{serviceData.name}</h1>
               <span className="text-label-sm px-sm py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">
                 {serviceData.type}
+              </span>
+              <span className={`inline-flex items-center gap-1.5 px-sm h-[22px] rounded-full text-label-sm font-medium ${config.bgClass} ${config.textClass}`}>
+                <span className={`w-[7px] h-[7px] rounded-full ${config.dotClass}`} />
+                {config.label}
               </span>
             </div>
             <div className="text-body-sm text-on-surface-variant">
