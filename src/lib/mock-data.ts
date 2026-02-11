@@ -1,7 +1,7 @@
 export const serviceData = {
   id: "svc_abc123",
   name: "zeabur-web",
-  status: "running" as const,
+  status: "success" as const,
   type: "Web Service",
   region: "Asia East (Taiwan)",
   lastDeployedAt: new Date(Date.now() - 3 * 60 * 1000).toISOString(), // 3 min ago
@@ -135,9 +135,14 @@ export const resourceData = {
   },
 };
 
+export const projectInfo = {
+  name: "Cardtie-staging",
+  region: "Tokyo, Japan",
+  projectId: "project-685f",
+};
+
 export const sidebarServices = [
-  { id: "svc_abc123", name: "zeabur-web", type: "Web Service", status: "running" as const },
-  { id: "svc_def456", name: "postgres-db", type: "PostgreSQL", status: "running" as const },
-  { id: "svc_ghi789", name: "redis-cache", type: "Redis", status: "running" as const },
-  { id: "svc_jkl012", name: "worker-queue", type: "Worker", status: "stopped" as const },
+  { id: "svc_abc123", name: "cardtie-core", type: "Web Service", status: "success" as const },
+  { id: "svc_def456", name: "postgres", type: "PostgreSQL", status: "error" as const },
+  { id: "svc_ghi789", name: "minio", type: "Storage", status: "pending" as const },
 ];

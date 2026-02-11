@@ -1,0 +1,142 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CostEstimator > Snapshot Tests > renders cost breakdown table correctly 1`] = `
+<div
+  class="flex flex-col gap-lg"
+>
+  <div
+    class="flex items-center justify-between"
+  >
+    <h3
+      class="text-title-md font-semibold text-on-surface"
+    >
+      費用明細
+    </h3>
+    <button
+      class="text-label-md font-medium text-primary hover:underline"
+    >
+      查看完整帳單 →
+    </button>
+  </div>
+  <div
+    class="rounded-md border border-outline-variant bg-surface-container overflow-hidden"
+  >
+    <div
+      class="grid grid-cols-4 bg-surface-container-high px-lg py-md"
+    >
+      <span
+        class="text-label-sm font-semibold text-on-surface-variant"
+      >
+        資源項目
+      </span>
+      <span
+        class="text-label-sm font-semibold text-on-surface-variant text-right"
+      >
+        用量
+      </span>
+      <span
+        class="text-label-sm font-semibold text-on-surface-variant text-right"
+      >
+        單價
+      </span>
+      <span
+        class="text-label-sm font-semibold text-on-surface-variant text-right"
+      >
+        小計
+      </span>
+    </div>
+    <div
+      class="grid grid-cols-4 px-lg py-md border-t border-outline-variant"
+    >
+      <span
+        class="text-body-sm text-on-surface"
+      >
+        CPU
+      </span>
+      <span
+        class="text-body-sm font-mono text-on-surface-variant text-right"
+      >
+        0.12 vCPU
+      </span>
+      <span
+        class="text-body-sm text-right text-on-surface-variant font-mono"
+      >
+        $0.50/vCPU
+      </span>
+      <span
+        class="text-body-sm font-mono font-semibold text-on-surface text-right"
+      >
+        $
+        0.06
+      </span>
+    </div>
+    <div
+      class="grid grid-cols-4 px-lg py-md border-t border-outline-variant"
+    >
+      <span
+        class="text-body-sm text-on-surface"
+      >
+        記憶體
+      </span>
+      <span
+        class="text-body-sm font-mono text-on-surface-variant text-right"
+      >
+        126 MB
+      </span>
+      <span
+        class="text-body-sm text-right text-on-surface-variant font-mono"
+      >
+        $0.01/MB
+      </span>
+      <span
+        class="text-body-sm font-mono font-semibold text-on-surface text-right"
+      >
+        $
+        1.27
+      </span>
+    </div>
+    <div
+      class="grid grid-cols-4 px-lg py-md border-t border-outline-variant"
+    >
+      <span
+        class="text-body-sm text-on-surface"
+      >
+        網路流量
+      </span>
+      <span
+        class="text-body-sm font-mono text-on-surface-variant text-right"
+      >
+        1.2 GB
+      </span>
+      <span
+        class="text-body-sm text-right text-tertiary font-medium"
+      >
+        免費
+      </span>
+      <span
+        class="text-body-sm font-mono font-semibold text-on-surface text-right"
+      >
+        $
+        0.00
+      </span>
+    </div>
+    <div
+      class="grid grid-cols-4 bg-surface-container-high px-lg py-md"
+    >
+      <span
+        class="text-body-md font-semibold text-on-surface"
+      >
+        預估月費合計
+      </span>
+      <span />
+      <span />
+      <span
+        class="text-title-md font-bold font-mono text-primary text-right"
+      >
+        $
+        1.33
+      </span>
+    </div>
+  </div>
+</div>
+`;

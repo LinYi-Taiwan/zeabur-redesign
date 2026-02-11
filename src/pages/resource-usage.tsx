@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { ResourceSummary } from "@/components/resource-summary";
-import { CostEstimator } from "@/components/cost-estimator";
-import { UpgradeBanner } from "@/components/upgrade-banner";
+import { ResourceSummary } from "@/components/organisms/resource-summary/resource-summary";
+import { CostEstimator } from "@/components/organisms/cost-estimator/cost-estimator";
+import { UpgradeBanner } from "@/components/molecules/upgrade-banner/upgrade-banner";
 import { trackEvent, EVENTS } from "@/lib/analytics";
 
 export function ResourceUsagePage() {

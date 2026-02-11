@@ -2,34 +2,13 @@
   "0 debug pnpm:scope": {
     "selected": 1
   },
-  "1 info pnpm": {
+  "1 error pnpm": {
+    "code": "ERR_PNPM_NO_SCRIPT",
     "err": {
       "name": "Error",
-      "message": "Command failed with ENOENT: storybook\nspawn storybook ENOENT",
-      "code": "ENOENT",
-      "stack": "Error: Command failed with ENOENT: storybook\nspawn storybook ENOENT\n    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n    at onErrorNT (node:internal/child_process:483:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)"
-    }
-  },
-  "2 error pnpm": {
-    "errno": -2,
-    "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
-    "syscall": "spawn storybook",
-    "path": "storybook",
-    "spawnargs": [],
-    "originalMessage": "spawn storybook ENOENT",
-    "shortMessage": "Command failed with ENOENT: storybook\nspawn storybook ENOENT",
-    "command": "storybook",
-    "escapedCommand": "storybook",
-    "failed": true,
-    "timedOut": false,
-    "isCanceled": false,
-    "killed": false,
-    "prefix": "/Users/linyi",
-    "err": {
-      "name": "Error",
-      "message": "Command failed with ENOENT: storybook\nspawn storybook ENOENT",
-      "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
-      "stack": "Error: Command failed with ENOENT: storybook\nspawn storybook ENOENT\n    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n    at onErrorNT (node:internal/child_process:483:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)"
+      "message": "Missing script: build",
+      "code": "ERR_PNPM_NO_SCRIPT",
+      "stack": "Error: Missing script: build\n    at Object.handler (/Users/linyi/.node/corepack/pnpm/6.11.0/dist/pnpm.cjs:121580:15)\n    at async /Users/linyi/.node/corepack/pnpm/6.11.0/dist/pnpm.cjs:125614:20\n    at async run (/Users/linyi/.node/corepack/pnpm/6.11.0/dist/pnpm.cjs:125589:34)\n    at async runPnpm (/Users/linyi/.node/corepack/pnpm/6.11.0/dist/pnpm.cjs:125799:5)\n    at async /Users/linyi/.node/corepack/pnpm/6.11.0/dist/pnpm.cjs:125791:7"
     }
   }
 }
