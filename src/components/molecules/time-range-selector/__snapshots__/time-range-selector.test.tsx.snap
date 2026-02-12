@@ -1,0 +1,69 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TimeRangeSelector > matches snapshot with 7d selection 1`] = `
+<div>
+  <div
+    class="flex items-center gap-1 bg-muted rounded-lg p-0.5"
+  >
+    <button
+      class="px-2.5 py-1.5 text-xs font-medium rounded-md transition-colors text-muted-foreground hover:text-foreground"
+    >
+      1H
+    </button>
+    <button
+      class="px-2.5 py-1.5 text-xs font-medium rounded-md transition-colors text-muted-foreground hover:text-foreground"
+    >
+      6H
+    </button>
+    <button
+      class="px-2.5 py-1.5 text-xs font-medium rounded-md transition-colors text-muted-foreground hover:text-foreground"
+    >
+      12H
+    </button>
+    <button
+      class="px-2.5 py-1.5 text-xs font-medium rounded-md transition-colors text-muted-foreground hover:text-foreground"
+    >
+      24H
+    </button>
+    <button
+      class="px-2.5 py-1.5 text-xs font-medium rounded-md transition-colors bg-card text-foreground shadow-sm"
+    >
+      7D
+    </button>
+  </div>
+</div>
+`;
+
+exports[`TimeRangeSelector > matches snapshot with default selection 1`] = `
+<div>
+  <div
+    class="flex items-center gap-1 bg-muted rounded-lg p-0.5"
+  >
+    <button
+      class="px-2.5 py-1.5 text-xs font-medium rounded-md transition-colors text-muted-foreground hover:text-foreground"
+    >
+      1H
+    </button>
+    <button
+      class="px-2.5 py-1.5 text-xs font-medium rounded-md transition-colors text-muted-foreground hover:text-foreground"
+    >
+      6H
+    </button>
+    <button
+      class="px-2.5 py-1.5 text-xs font-medium rounded-md transition-colors bg-card text-foreground shadow-sm"
+    >
+      12H
+    </button>
+    <button
+      class="px-2.5 py-1.5 text-xs font-medium rounded-md transition-colors text-muted-foreground hover:text-foreground"
+    >
+      24H
+    </button>
+    <button
+      class="px-2.5 py-1.5 text-xs font-medium rounded-md transition-colors text-muted-foreground hover:text-foreground"
+    >
+      7D
+    </button>
+  </div>
+</div>
+`;

@@ -14,6 +14,8 @@ export interface MetricCardProps {
   chartGradientId: string;
   chartData: number[];
   alert?: AlertTipProps;
+  onClick?: () => void;
+  isSelected?: boolean;
 }
 
 export function MetricCard({
@@ -28,9 +30,20 @@ export function MetricCard({
   chartGradientId,
   chartData,
   alert,
+  onClick,
+  isSelected = false,
 }: MetricCardProps) {
   return (
-    <div className="flex flex-col gap-md rounded-md border border-outline-variant bg-surface-container p-xl">
+    <div
+      onClick={onClick}
+      className={`flex flex-col gap-md rounded-md border p-xl transition-all ${
+        onClick ? "cursor-pointer" : ""
+      } ${
+        isSelected
+          ? "border-primary bg-surface-container-high shadow-lg scale-[1.02]"
+          : "border-outline-variant bg-surface-container hover:border-outline hover:shadow-md"
+      }`}
+    >
       {/* Top: icon + value */}
       <div className="flex items-center justify-between">
         <div

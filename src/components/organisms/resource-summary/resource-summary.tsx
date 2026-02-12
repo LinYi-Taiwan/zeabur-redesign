@@ -8,12 +8,25 @@ import {
 } from "lucide-react";
 import { resourceData } from "@/lib/mock-data";
 import { MetricCard } from "@/components/molecules/metric-card/metric-card";
+import { TimeRange } from "@/components/molecules/time-range-selector/time-range-selector";
 
-export function ResourceSummary() {
+export type MetricType = "cpu" | "memory" | "cost" | "network";
+
+export interface ResourceSummaryProps {
+  timeRange?: TimeRange;
+  selectedMetric?: MetricType | null;
+  onMetricSelect?: (metric: MetricType) => void;
+}
+
+export function ResourceSummary({
+  timeRange = "12h",
+  selectedMetric,
+  onMetricSelect,
+}: ResourceSummaryProps) {
   const { current, cost } = resourceData;
 
-  const cpuData = resourceData.timeSeries["12h"].map((d) => d.cpu);
-  const memData = resourceData.timeSeries["12h"].map((d) => d.memory);
+  const cpuData = resourceData.timeSeries[timeRange].map((d) => d.cpu);
+  const memData = resourceData.timeSeries[timeRange].map((d) => d.memory);
   const costData = cpuData.map(
     (_, i) => 0.8 + (i / cpuData.length) * 0.6 + Math.sin(i * 0.7) * 0.05,
   );
@@ -44,6 +57,8 @@ export function ResourceSummary() {
           chartColor="#D0BCFF"
           chartGradientId="cpuGrad"
           chartData={cpuData}
+          onClick={() => onMetricSelect?.("cpu")}
+          isSelected={selectedMetric === "cpu"}
           alert={{
             icon: Lightbulb,
             iconColor: "#D0BCFF",
@@ -62,6 +77,8 @@ export function ResourceSummary() {
           chartColor="#CCC2DC"
           chartGradientId="memGrad"
           chartData={memData}
+          onClick={() => onMetricSelect?.("memory")}
+          isSelected={selectedMetric === "memory"}
           alert={{
             icon: TriangleAlert,
             iconColor: "#F5C344",
@@ -85,6 +102,8 @@ export function ResourceSummary() {
           chartColor="#7DD87E"
           chartGradientId="costGrad"
           chartData={costData}
+          onClick={() => onMetricSelect?.("cost")}
+          isSelected={selectedMetric === "cost"}
         />
         <MetricCard
           icon={Activity}
@@ -96,6 +115,8 @@ export function ResourceSummary() {
           chartColor="#F5C344"
           chartGradientId="netGrad"
           chartData={netData}
+          onClick={() => onMetricSelect?.("network")}
+          isSelected={selectedMetric === "network"}
         />
       </div>
     </div>

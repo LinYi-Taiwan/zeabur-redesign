@@ -12,17 +12,12 @@ import {
 import { cn } from "@/lib/utils";
 import { resourceData } from "@/lib/mock-data";
 import { trackEvent, EVENTS } from "@/lib/analytics";
+import {
+  TimeRangeSelector,
+  TimeRange,
+} from "@/components/molecules/time-range-selector/time-range-selector";
 
-type TimeRange = "1h" | "6h" | "12h" | "24h" | "7d";
 type Metric = "memory" | "cpu";
-
-const timeRanges: { value: TimeRange; label: string }[] = [
-  { value: "1h", label: "1H" },
-  { value: "6h", label: "6H" },
-  { value: "12h", label: "12H" },
-  { value: "24h", label: "24H" },
-  { value: "7d", label: "7D" },
-];
 
 const metricConfig = {
   memory: {
@@ -115,22 +110,7 @@ export function ResourceChart() {
         </div>
 
         {/* Time range selector */}
-        <div className="flex items-center gap-1 bg-muted rounded-lg p-0.5">
-          {timeRanges.map((range) => (
-            <button
-              key={range.value}
-              onClick={() => handleTimeRangeChange(range.value)}
-              className={cn(
-                "px-2.5 py-1.5 text-xs font-medium rounded-md transition-colors",
-                timeRange === range.value
-                  ? "bg-card text-foreground shadow-sm"
-                  : "text-muted-foreground hover:text-foreground"
-              )}
-            >
-              {range.label}
-            </button>
-          ))}
-        </div>
+        <TimeRangeSelector value={timeRange} onChange={handleTimeRangeChange} />
       </div>
 
       {/* Chart */}

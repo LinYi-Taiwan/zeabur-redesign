@@ -28,6 +28,7 @@ export const EVENTS = {
   RESOURCE_TAB_VIEWED: "resource_tab_viewed",
   RESOURCE_TIMERANGE_CHANGED: "resource_timerange_changed",
   RESOURCE_CHART_HOVERED: "resource_chart_hovered",
+  RESOURCE_METRIC_SELECTED: "resource_metric_selected",
   COST_ESTIMATE_VIEWED: "cost_estimate_viewed",
   COST_DETAIL_EXPANDED: "cost_detail_expanded",
 } as const;
